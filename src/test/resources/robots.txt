@@ -1,0 +1,10 @@
+
+# Sample robots.txt file for use in tests
+
+User-agent: somebot
+disallow: /login
+
+User-agent: *
+Disallow: /contents
+Disallow: /pages/*/french
+Disallow: /hello/*

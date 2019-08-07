@@ -5,14 +5,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>me.adeshina</groupId>
-  <artifactId>webcrawler</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <artifactId>site-crawler</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
 
-  <name>WebCrawler</name>
-  <description>A crawler library for scrapping data from a single domain</description>
+  <name>SiteCrawler</name>
+  <description>A simple web crawler library</description>
   
-  <!-- FIXME: Link to Github pages -->
-  <url>http://www.example.com</url>
+  <url>https://github.com/abdulwahabO/site-crawler</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
