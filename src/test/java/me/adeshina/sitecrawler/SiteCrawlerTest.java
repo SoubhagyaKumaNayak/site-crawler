@@ -1,8 +1,11 @@
 package me.adeshina.sitecrawler;
 
 import java.util.Set;
+
 import me.adeshina.sitecrawler.dto.WebPage;
-import me.adeshina.sitecrawler.exception.CrawlException;
+import me.adeshina.sitecrawler.exception.CrawlerCreateException;
+import me.adeshina.sitecrawler.exception.InvalidDomainUrlException;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -29,33 +32,18 @@ class SiteCrawlerTest {
     @ParameterizedTest
     @ValueSource(strings = {"/www.google.com", "https:/google.com"})
     void shouldThrowExceptionForInvalidUrls(String domain) {
-        assertThrows(CrawlException.class, () -> SiteCrawler.get(domain, config));
+        assertThrows(InvalidDomainUrlException.class, () -> SiteCrawler.create(domain, config));
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"https://www.facebook.com/news/2", "https://google.com/news/"})
     void shouldThrowExceptionForNonTopLevelDomainUrl(String url) {
-        assertThrows(CrawlException.class, () -> SiteCrawler.get(url, config));
+        assertThrows(InvalidDomainUrlException.class, () -> SiteCrawler.create(url, config));
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"https://google.com/", "https://www.example2.com"})
+    @ValueSource(strings = {"https://goo_gle.com/", "https://www.example2.com"})
     void shouldAcceptTopLevelDomainUrl(String domain) {
-        assertDoesNotThrow(() -> SiteCrawler.get(domain, config));
-    }
-
-    @Test
-    void shouldReturnMaxPages() throws Exception {
-
-        String site = "https://twitter.com";
-        SiteCrawler twitterCrawler = SiteCrawler.get(site, config);
-
-        Set<WebPage> pages = twitterCrawler.start();
-        boolean noExternalPages = pages.stream().allMatch(page -> page.getUrl().startsWith(site));
-
-        assertNotNull(pages);
-        assertFalse(pages.isEmpty(), "No web pages in result");
-        assertEquals(2, pages.size());
-        assertTrue(noExternalPages, "URLs outside " + site + " were crawled");
+        assertDoesNotThrow(() -> SiteCrawler.create(domain, config));
     }
 }

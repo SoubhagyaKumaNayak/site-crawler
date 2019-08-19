@@ -1,68 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>me.adeshina</groupId>
-  <artifactId>site-crawler</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+    <groupId>me.adeshina</groupId>
+    <artifactId>site-crawler</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 
-  <name>SiteCrawler</name>
-  <description>A simple web crawler library</description>
-  
-  <url>https://github.com/abdulwahabO/site-crawler</url>
+    <name>SiteCrawler</name>
+    <description>A simple web crawler library</description>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	<java.version>1.8</java.version>	
-	<junit.jupiter.version>5.5.1</junit.jupiter.version>
-	<mockito.version>2.1.0</mockito.version>
-  </properties>
+    <url>https://github.com/abdulwahabO/site-crawler</url>
 
-  <dependencies>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <junit.jupiter.version>5.5.1</junit.jupiter.version>
+        <mockito.version>2.1.0</mockito.version>
+    </properties>
 
-    <dependency>
-        <groupId>org.jsoup</groupId>
-        <artifactId>jsoup</artifactId>
-        <version>1.12.1</version>
-    </dependency>
+    <dependencies>
 
-	<dependency>
-		<groupId>org.junit.jupiter</groupId>
-		<artifactId>junit-jupiter</artifactId>
-		<version>${junit.jupiter.version}</version>
-		<scope>test</scope>
-	</dependency>
-	
-	<dependency>
-		<groupId>org.mockito</groupId>
-		<artifactId>mockito-core</artifactId>
-		<version>${mockito.version}</version>
-	</dependency>
-	
-  </dependencies>
-  
-  <build>
-    <plugins>
-	
-	  <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-        </configuration>
-	  </plugin>
-	  
-	  <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M3</version>
-      </plugin>
-	  
-    </plugins>
-  </build>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M3</version>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub abdulwahabO Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/abdulwahabO/site-crawler</url>
+        </repository>
+    </distributionManagement>
 
 </project>

@@ -48,7 +48,7 @@ final class CrawlWorker {
                     Thread.sleep(config.delayMilliSeconds());
 
                 } catch (IOException | InterruptedException e) {
-                    // Do nothing
+                    e.printStackTrace();
                 }
             }
         }
