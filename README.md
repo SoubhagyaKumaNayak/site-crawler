@@ -2,7 +2,7 @@
 
 # About
 
-A simple crawler library for scraping the contents of a website. It is written in Java using JDK 1.8
+A simple crawler library for scraping the contents of websites. Written in Java using JDK 1.8. Not intended for any serious production use.
 
 # Usage
 
