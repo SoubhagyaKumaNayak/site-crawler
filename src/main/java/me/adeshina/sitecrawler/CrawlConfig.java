@@ -16,8 +16,8 @@ public final class CrawlConfig {
      * Sets the politeness delay i.e the number of seconds between successive requests to the site.
      * The default is seven(7) seconds.
      */
-    public void crawlDelaySeconds(int crawlDelaySeconds) {
-        this.crawlDelaySeconds = crawlDelaySeconds;
+    public void crawlDelaySecond(int crawlDelaySeconds) {
+        this.crawlDelaySecond= crawlDelaySecond;
     }
 
     /**
@@ -38,29 +38,29 @@ public final class CrawlConfig {
     /**
      * Returns the politeness delay i.e number of seconds between successive requests to the website.
      */
-    public int crawlDelaySeconds() {
-        return crawlDelaySeconds;
+    public int crawlDelaySecond() {
+        return crawlDelaySecond;
     }
 
     /**
      * Returns the politeness delay in milliseconds.
      */
     public long delayMilliSeconds() {
-        return crawlDelaySeconds * 1000;
+        return crawlDelaySecond * 1000;
     }
 
     /**
      * Returns true if the domain's robots.txt should be respected. False otherwise.
      */
     public boolean respectRobotsFile() {
-        return respectRobotsFile;
+        return respectRobotsFiles;
     }
 
     /**
      * Sets whether or not to respect the domain's robots.txt file.
      */
-    public void respectRobotsFile(boolean respectRobotsFile) {
-        this.respectRobotsFile = respectRobotsFile;
+    public void respectRobotsFiles(boolean respectRobotsFile) {
+        this.respectRobotsFiles = respectRobotsFiles;
     }
 
     /**
